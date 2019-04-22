@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Menú Copa América - animation search modal</title>
-	<link rel="stylesheet" href="./main.css">
+	<title>Menú Copa América - animation search traslate</title>
+	<link rel="stylesheet" href="./main_v2.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
@@ -33,6 +33,19 @@
 			<div class="cgrid-container mol-nav_Container-MainList">
 				<div class="mol-nav_MainList">
 					<ul class="MainList-ul__list">
+						<li class="list-cell visible-on-mobile">
+							<div class="search" id="search-mobile__form">
+								<div class="search__bg"></div>
+								<div class="search__box">
+									<form action="/buscador" method="GET" class="search-mobile__form" autocomplete="off">
+										<input name="buscando" type="search" placeholder="Buscar en Líbero ..." results="0" class="search-mobile__input">
+										<button type="submit" class="search-mobile__submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+								</div>
+							</div>
+						</li>
 						<li class="list-cell"><a href="menu_v2.html">Noticias</a></li>
 						<li class="list-cell"><a href="index.html">Fixture</a></li>
 						<li class="list-cell"><a href="#">Tabla de posiciones</a></li>
@@ -90,7 +103,7 @@
 
 	
 	
-	<script src="./main.js"></script>
+	<script src="./main_v2.js"></script>
 
 </body>
 </html>
