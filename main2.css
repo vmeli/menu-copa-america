@@ -64,7 +64,7 @@ html, body {
 .search.s--moving {
   transition: transform 0.4s cubic-bezier(0.56, -0.49, 0.58, 0.9);
 }
-.search__bg {
+/*.search__bg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -163,4 +163,4 @@ html, body {
   top: 33px;
   pointer-events: auto;
   cursor: pointer;
-}
+}*/

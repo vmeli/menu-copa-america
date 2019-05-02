@@ -1,6 +1,6 @@
 let btnSearch = document.getElementById('js-animation-search');
 let inputSearch = document.getElementById('search-mobile__form');
-
+  
 function animation(e) {
 	let element = e.target;
 	if(element.nodeName == "I") {
@@ -11,7 +11,7 @@ function animation(e) {
 	let original = this,
 		clone = inputSearch.cloneNode(true);
 
-element.classList.add('s-hidden');
+		element.classList.add('s-hidden');
 		clone.classList.add("s--cloned");
 
 	let searchOverlay = document.createElement('div');
@@ -27,11 +27,9 @@ element.classList.add('s-hidden');
 	offsetX = originalRect.left - cloneRect.left;
 	offsetY = originalRect.top - cloneRect.top;
 	
-	
-
 	clone.style.transform = "translate("+ offsetX +"px, "+ offsetY +"px)";
 
-clone.classList.add("s--moving");
+	clone.classList.add("s--moving");
 
     clone.setAttribute("style", "");
 	

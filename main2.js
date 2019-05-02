@@ -35,10 +35,10 @@
 
   function openAfterMove() {
     $clone.classList.add("s--active");
-    $clone.querySelector("input").focus();
+    //$clone.querySelector("input").focus();
 
-    addCloseHandler($clone);
-    $clone.removeEventListener("transitionend", openAfterMove);
+    //addCloseHandler($clone);
+    //$clone.removeEventListener("transitionend", openAfterMove);
   };
   
   function addCloseHandler($parent) {
