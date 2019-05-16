@@ -95,10 +95,23 @@
             </div>
         </div>
     <!--@else--> 
-
-
-
+    	<!-- code-index.html -->
 	<!--@endif-->
+
+	<div class="banner__header" style="background-image: url({{isset($header['imagen']) ? (new \App\Services\S3ChilcanoService())->getImageS3PresetLibero($header['imagen'], '1620x801') : ''}})">
+    	<div class="banner__header--opacity">
+        	<div class="container__banner">
+            	<div class="banner__header--text">
+                	Soy un texto
+            	</div>
+            	<div class="banner__header__container">
+                	<div class="banner__header--title">
+                        <span><a href="{{$header['url']}}">Soy un título</a></span>
+                	</div>
+            	</div>
+        	</div>        
+    	</div>
+	</div>
    	<div class="notas">
 		<div class="notas__middle">
 			<p style="font-size:12px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat repellat voluptates molestias voluptatem exercitationem alias eos cupiditate, suscipit vel, iusto, illo sapiente blanditiis mollitia minima nulla, voluptatum nam quidem veritatis!</p>
