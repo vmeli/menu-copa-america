@@ -21,6 +21,78 @@ function domReadyToGo() {
         //Este método se llama cuando se termina de cargar toda la pagina
     }
 
+	/************* HeaderCopaAmerica *************/    
+    /*** Menú responsive ***/
+    let btnBurguer = document.getElementById('js_com_menu_responsive_btn') ? document.getElementById('js_com_menu_responsive_btn') : null;
+    let navMainList = document.getElementById('nav_MainList') ? document.getElementById('nav_MainList') : null; 
+
+    function setToogleClassMainMenu(e) {
+        let tagHtml = document.querySelector('html');
+        let tagBody = document.querySelector('body');
+
+        navMainList.classList.toggle("is-active-responsive");
+        this.classList.toggle("is-active-responsive");
+
+        tagBody.classList.toggle("is-active-responsive");
+        tagHtml.classList.toggle("is-active-responsive");
+   }
+
+    btnBurguer.addEventListener('click', setToogleClassMainMenu);
+
+    /*** MÁS INFORMACIÓN - DROPDOW ***/
+    //var acc = document.getElementsByClassName("js-trigger");
+    //var i;
+    //for (i = 0; i < acc.length; i++) {
+    //    acc[i].onclick = function() {
+    //        this.classList.toggle("content-visible");
+    //        var menuOpcion = this.nextElementSibling;
+    //        if (menuOpcion.style.maxHeight) {
+    //            menuOpcion.style.maxHeight = null;
+    //        } else {
+    //            menuOpcion.style.maxHeight = menuOpcion.scrollHeight + "px";
+    //        }
+    //    }
+    //}
+	/************* End - HeaderCopaAmerica *************/    
+
+	/************* HeaderStickyPartialJs *************/
+	if (window.matchMedia("(min-width: 1000px)").matches) {
+		if(document.querySelector('.tem-Wrapper')) {
+			var wrapper = document.querySelector('.tem-Wrapper');
+			var temWrapperHeader = document.querySelector('.tem_Wrapper-header');
+			var headerSticky = document.getElementById('tem_Header-sticky');
+			var headerStickyHeight = temWrapperHeader.getBoundingClientRect().height; 
+			var headerHeight = temWrapperHeader.getBoundingClientRect().height;
+	    	var sticky = (wrapper.getBoundingClientRect().top)*(-1);
+			var sum = sticky + headerHeight;
+			let tagHtml = document.querySelector('html');
+	        let tagBody = document.querySelector('body');
+
+			function myFunction() {
+			//console.log("scroll",window.pageYOffset,"distancia",sum);
+			let temHeader = document.querySelector('.tem_Header'),
+				temHeaderHeight = temHeader.getBoundingClientRect().height;
+				//console.log(temWrapperHeader);
+				if (window.scrollY >= sum || window.pageYOffset >= sum) {
+					wrapper.classList.add("is-active-sticky");
+					tagBody.classList.add("is-active-sticky");
+					tagHtml.classList.add("is-active-sticky");
+					//headerSticky.style.height = headerHeight + 'px';
+					//headerSticky.style.marginTop = headerHeight + 'px';
+					headerSticky.style.height = temHeaderHeight + 'px';
+				} else {
+					wrapper.classList.remove("is-active-sticky");
+					tagBody.classList.remove("is-active-sticky");
+					tagHtml.classList.remove("is-active-sticky");
+					//headerSticky.setAttribute("style", "");
+					headerSticky.removeAttribute("style");
+				}
+			}
+			window.onscroll = function() {myFunction()};
+
+		}
+	}
+	/********** End - HeaderStickyPartialJs **********/
 
 	/********** AnimationSearchJs **********/
 	if(document.getElementById('js-animation-search')) {
@@ -185,45 +257,6 @@ function domReadyToGo() {
 	    btnSearch.addEventListener('click', animation);
 	}
 	/********** End - AnimationSearchJs **********/
-
-	/************* HeaderStickyPartialJs *************/
-	if (window.matchMedia("(min-width: 1000px)").matches) {
-		if(document.querySelector('.tem-Wrapper')) {
-			var wrapper = document.querySelector('.tem-Wrapper');
-			var temWrapperHeader = document.querySelector('.tem_Wrapper-header');
-			var headerSticky = document.getElementById('tem_Header-sticky');
-			var headerStickyHeight = temWrapperHeader.getBoundingClientRect().height; 
-			var headerHeight = temWrapperHeader.getBoundingClientRect().height;
-	    	var sticky = (wrapper.getBoundingClientRect().top)*(-1);
-			var sum = sticky + headerHeight;
-			let tagHtml = document.querySelector('html');
-	        let tagBody = document.querySelector('body');
-
-			function myFunction() {
-			//console.log("scroll",window.pageYOffset,"distancia",sum);
-			let temHeader = document.querySelector('.tem_Header'),
-				temHeaderHeight = temHeader.getBoundingClientRect().height;
-				//console.log(temWrapperHeader);
-				if (window.scrollY >= sum || window.pageYOffset >= sum) {
-					wrapper.classList.add("is-active-sticky");
-					tagBody.classList.add("is-active-sticky");
-					tagHtml.classList.add("is-active-sticky");
-					//headerSticky.style.height = headerHeight + 'px';
-					//headerSticky.style.marginTop = headerHeight + 'px';
-					headerSticky.style.height = temHeaderHeight + 'px';
-				} else {
-					wrapper.classList.remove("is-active-sticky");
-					tagBody.classList.remove("is-active-sticky");
-					tagHtml.classList.remove("is-active-sticky");
-					//headerSticky.setAttribute("style", "");
-					headerSticky.removeAttribute("style");
-				}
-			}
-			window.onscroll = function() {myFunction()};
-
-		}
-	}
-	/********** End - HeaderStickyPartialJs **********/
 
 }
 setTimeout(function () {
